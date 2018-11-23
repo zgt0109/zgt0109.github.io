@@ -16,3 +16,5 @@ group :development do
 end
 
 gem 'sinatra', '~> 1.4.2'
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
