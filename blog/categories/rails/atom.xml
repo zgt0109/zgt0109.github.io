@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | My Octopress Blog]]></title>
+  <link href="http://zgt0109.github.io/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://zgt0109.github.io/"/>
+  <updated>2018-11-23T15:59:50+08:00</updated>
+  <id>http://zgt0109.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gem安装源替换]]></title>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/rails/"/>
+    <updated>2018-11-23T14:41:29+08:00</updated>
+    <id>http://zgt0109.github.io/blog/2018/11/23/rails</id>
+    <content type="html"><![CDATA[<h4>Gem安装源替换</h4>
+
+<pre><code>  gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ -v
+  bundle config mirror.https://rubygems.org https://gems.ruby-china.org
+</code></pre>
+
+<h4>终端运行产生安全密钥</h4>
+
+<p>  (bundle exec) rake(rails) secret RAILS_ENV=production
+  echo $SECRET_KEY_BASE</p>
+
+<h4>ubuntu 部署环境变量添加位置 ~/.bashrc</h4>
+
+<p>If you&rsquo;re on a normal Ubuntu machine just put export SECRET_KEY_BASE=&ldquo; &lt;&lt;&lt; output from rake secret here >>> &rdquo; in your <code>~/.bashrc</code>.
+Run <code>source ~/.bashrc</code> and restart the app.</p>
+
+<h4>Rails template 引用(github上的code row Url)</h4>
+
+<p>  rails app:template LOCATION=<a href="https://raw.githubusercontent.com/guxiaobai/oh-my-rails/master/capistrano.rb">https://raw.githubusercontent.com/guxiaobai/oh-my-rails/master/capistrano.rb</a></p>
+
+<h4>AssetsPipeline预编译命令</h4>
+
+<p>  rake(rails) assets:precompile RAILS_ENV=production</p>
+]]></content>
+  </entry>
+  
+</feed>

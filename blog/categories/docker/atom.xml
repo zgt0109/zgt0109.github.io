@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Docker | My Octopress Blog]]></title>
+  <link href="http://zgt0109.github.io/blog/categories/docker/atom.xml" rel="self"/>
+  <link href="http://zgt0109.github.io/"/>
+  <updated>2018-11-23T15:59:50+08:00</updated>
+  <id>http://zgt0109.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Docker基础命令]]></title>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/docker-basic/"/>
+    <updated>2018-11-23T15:08:36+08:00</updated>
+    <id>http://zgt0109.github.io/blog/2018/11/23/docker-basic</id>
+    <content type="html"><![CDATA[<h4>使用Homebrew安装docker</h4>
+
+<pre><code class="bash">brew cask install docker 
+</code></pre>
+
+<h4>替换docker安装源</h4>
+
+<pre><code>https://ep1dz7wh.mirror.aliyuncs.com
+</code></pre>
+
+<!-- more -->
+
+
+<h4>docker基本命令</h4>
+
+<ul>
+<li>docker pull mysql 下载 mysql 镜像</li>
+<li>docker pull ruby 下载 ruby 镜像</li>
+<li>docker pull ubuntu</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it ubuntu 运行ubuntu虚拟机（容器盒子概念）</li>
+<li>docker ps -a 查看虚拟机的运行状态</li>
+<li>exit 退出并关闭虚拟机</li>
+<li>docker exec -it 8f592ce3fcf4 bash 重新进入刚刚关闭的虚拟机</li>
+<li>docker ps -a 再次查看虚拟机的运行状态（发现上一个并未关闭 是Up）</li>
+<li>docker start xxx 重新打开关闭的容器</li>
+<li>docker attach xxx 进入刚刚打开的容器</li>
+<li>docker stop 8f592ce3fcf4 关闭刚刚的虚拟机</li>
+<li>docker commit 8f592ce3fcf4 zgt:v1 创建一个名为zgt:v1的镜像</li>
+<li>docker images 可以查看刚刚创建的镜像</li>
+<li>docker run -it zgt:v2 启动虚拟机</li>
+<li>exit 退出并关闭虚拟机</li>
+<li>docker ps -a 查看虚拟机的运行状态</li>
+<li>docker rm 8f592ce3fcf4 删除虚拟机</li>
+<li>docker run -it -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql bash 空密码进入mysql虚拟机</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it ruby(d8805446e6f5) bash 进入ruby虚拟机</li>
+<li>docker run -it -v /Users/zgt/Documents:/app c08b3de225e9 bash -v 是在虚拟机的根目录下面中指定一个app的文件夹 镜像 ~/Documents</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker rmi ruby mysql 删除镜像</li>
+<li>mkdir docker_demo 并进入</li>
+<li>touch Dockerfile</li>
+<li>vi Dockerfile</li>
+</ul>
+
+
+<pre><code class="rb This is a ruby script">FROM ruby:2.3
+RUN sed -i 's/httpredir.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+RUN apt-get update &amp;&amp; apt-get install -y mysql-client postgresql-client nodejs sqlite3
+RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ -v
+RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.org
+RUN gem install rails -v 5.0.0.1
+</code></pre>
+
+<ul>
+<li>当前目录下运行 docker build -t rails:v3 . 新建镜像rails:v3</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it -v ~/Documents:/apple rails:v3 bash</li>
+<li>进入虚拟机 ll  并进入/apple</li>
+<li>就会在 实体机的~/Documents 操作</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

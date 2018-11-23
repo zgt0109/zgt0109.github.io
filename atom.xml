@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://zgt0109.github.io/atom.xml" rel="self"/>
+  <link href="http://zgt0109.github.io/"/>
+  <updated>2018-11-23T15:59:50+08:00</updated>
+  <id>http://zgt0109.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Docker基础命令]]></title>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/docker-basic/"/>
+    <updated>2018-11-23T15:08:36+08:00</updated>
+    <id>http://zgt0109.github.io/blog/2018/11/23/docker-basic</id>
+    <content type="html"><![CDATA[<h4>使用Homebrew安装docker</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>brew cask install docker
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>替换docker安装源</h4>
+
+<pre><code>https://ep1dz7wh.mirror.aliyuncs.com
+</code></pre>
+
+<!-- more -->
+
+
+<h4>docker基本命令</h4>
+
+<ul>
+<li>docker pull mysql 下载 mysql 镜像</li>
+<li>docker pull ruby 下载 ruby 镜像</li>
+<li>docker pull ubuntu</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it ubuntu 运行ubuntu虚拟机（容器盒子概念）</li>
+<li>docker ps -a 查看虚拟机的运行状态</li>
+<li>exit 退出并关闭虚拟机</li>
+<li>docker exec -it 8f592ce3fcf4 bash 重新进入刚刚关闭的虚拟机</li>
+<li>docker ps -a 再次查看虚拟机的运行状态（发现上一个并未关闭 是Up）</li>
+<li>docker start xxx 重新打开关闭的容器</li>
+<li>docker attach xxx 进入刚刚打开的容器</li>
+<li>docker stop 8f592ce3fcf4 关闭刚刚的虚拟机</li>
+<li>docker commit 8f592ce3fcf4 zgt:v1 创建一个名为zgt:v1的镜像</li>
+<li>docker images 可以查看刚刚创建的镜像</li>
+<li>docker run -it zgt:v2 启动虚拟机</li>
+<li>exit 退出并关闭虚拟机</li>
+<li>docker ps -a 查看虚拟机的运行状态</li>
+<li>docker rm 8f592ce3fcf4 删除虚拟机</li>
+<li>docker run -it -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql bash 空密码进入mysql虚拟机</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it ruby(d8805446e6f5) bash 进入ruby虚拟机</li>
+<li>docker run -it -v /Users/zgt/Documents:/app c08b3de225e9 bash -v 是在虚拟机的根目录下面中指定一个app的文件夹 镜像 ~/Documents</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker rmi ruby mysql 删除镜像</li>
+<li>mkdir docker_demo 并进入</li>
+<li>touch Dockerfile</li>
+<li>vi Dockerfile</li>
+</ul>
+
+
+<figure class='code'><figcaption><span>This is a ruby script</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">FROM</span> <span class="ss">ruby</span><span class="p">:</span><span class="mi">2</span><span class="o">.</span><span class="mi">3</span>
+</span><span class='line'><span class="no">RUN</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;s/httpredir.debian.org/mirrors.aliyun.com/g&#39;</span> <span class="sr">/etc/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span>
+</span><span class='line'><span class="no">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">mysql</span><span class="o">-</span><span class="n">client</span> <span class="n">postgresql</span><span class="o">-</span><span class="n">client</span> <span class="n">nodejs</span> <span class="n">sqlite3</span>
+</span><span class='line'><span class="no">RUN</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">--</span><span class="n">add</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">gems</span><span class="o">.</span><span class="n">ruby</span><span class="o">-</span><span class="n">china</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="o">--</span><span class="n">remove</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span> <span class="o">-</span><span class="n">v</span>
+</span><span class='line'><span class="no">RUN</span> <span class="n">bundle</span> <span class="n">config</span> <span class="n">mirror</span><span class="o">.</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rubygems</span><span class="o">.</span><span class="n">org</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">gems</span><span class="o">.</span><span class="n">ruby</span><span class="o">-</span><span class="n">china</span><span class="o">.</span><span class="n">org</span>
+</span><span class='line'><span class="no">RUN</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span> <span class="o">-</span><span class="n">v</span> <span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>当前目录下运行 docker build -t rails:v3 . 新建镜像rails:v3</li>
+<li>docker images 查看下载的镜像</li>
+<li>docker run -it -v ~/Documents:/apple rails:v3 bash</li>
+<li>进入虚拟机 ll  并进入/apple</li>
+<li>就会在 实体机的~/Documents 操作</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gem安装源替换]]></title>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/rails/"/>
+    <updated>2018-11-23T14:41:29+08:00</updated>
+    <id>http://zgt0109.github.io/blog/2018/11/23/rails</id>
+    <content type="html"><![CDATA[<h4>Gem安装源替换</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ -v
+</span><span class='line'>  bundle config mirror.https://rubygems.org https://gems.ruby-china.org</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>终端运行产生安全密钥</h4>
+
+<p>  (bundle exec) rake(rails) secret RAILS_ENV=production
+  echo $SECRET_KEY_BASE</p>
+
+<h4>ubuntu 部署环境变量添加位置 ~/.bashrc</h4>
+
+<p>If you&rsquo;re on a normal Ubuntu machine just put export SECRET_KEY_BASE=&ldquo; &lt;&lt;&lt; output from rake secret here >>> &rdquo; in your <code>~/.bashrc</code>.
+Run <code>source ~/.bashrc</code> and restart the app.</p>
+
+<h4>Rails template 引用(github上的code row Url)</h4>
+
+<p>  rails app:template LOCATION=<a href="https://raw.githubusercontent.com/guxiaobai/oh-my-rails/master/capistrano.rb">https://raw.githubusercontent.com/guxiaobai/oh-my-rails/master/capistrano.rb</a></p>
+
+<h4>AssetsPipeline预编译命令</h4>
+
+<p>  rake(rails) assets:precompile RAILS_ENV=production</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[如何用octopress搭建个人静态博客]]></title>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/octopress-install/"/>
+    <updated>2018-11-23T14:13:45+08:00</updated>
+    <id>http://zgt0109.github.io/blog/2018/11/23/octopress-install</id>
+    <content type="html"><![CDATA[<h3>如何用octopress搭建个人静态博客</h3>
+]]></content>
+  </entry>
+  
+</feed>
