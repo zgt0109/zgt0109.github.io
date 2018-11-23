@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://zgt0109.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: 程序人生
+subtitle: 奋斗的人生最美丽.
+author: zgt
 simple_search: https://www.google.com/search
 description:
 
@@ -92,7 +92,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name:
-disqus_show_comment_count: false
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
