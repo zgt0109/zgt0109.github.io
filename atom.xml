@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[程序人生]]></title>
+  <title><![CDATA[Blog Like a Hacker.]]></title>
   <link href="http://zgt0109.github.io/atom.xml" rel="self"/>
   <link href="http://zgt0109.github.io/"/>
-  <updated>2018-11-23T16:17:09+08:00</updated>
+  <updated>2018-11-23T19:03:21+08:00</updated>
   <id>http://zgt0109.github.io/</id>
   <author>
     <name><![CDATA[zgt]]></name>
@@ -127,10 +127,17 @@ Run <code>source ~/.bashrc</code> and restart the app.</p>
   
   <entry>
     <title type="html"><![CDATA[如何用octopress搭建个人静态博客]]></title>
-    <link href="http://zgt0109.github.io/blog/2018/11/23/octopress-install/"/>
+    <link href="http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/"/>
     <updated>2018-11-23T14:13:45+08:00</updated>
-    <id>http://zgt0109.github.io/blog/2018/11/23/octopress-install</id>
+    <id>http://zgt0109.github.io/blog/2018/11/23/14-octopress-install</id>
     <content type="html"><![CDATA[<h3>如何用octopress搭建个人静态博客</h3>
+
+<blockquote><p>Octopress</p></blockquote>
+
+<p><img src="http://pi4lki9yr.bkt.clouddn.com/octopress.jpg" alt="Octopress" /></p>
+
+<!-- more -->
+
 ]]></content>
   </entry>
   
