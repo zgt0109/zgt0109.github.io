@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://zgt0109.github.io
-title: 程序人生
-subtitle: 奋斗的人生最美丽.
+title: Blog Like a Hacker.
+subtitle: A blogging framework for hackers.
 author: zgt
 simple_search: https://www.google.com/search
 description:
@@ -91,7 +91,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: https-zgt0109-github-io
 disqus_show_comment_count: true
 
 # Google Analytics

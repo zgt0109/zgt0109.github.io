@@ -3,7 +3,7 @@ layout: post
 title: "docker基础命令"
 date: 2018-11-23 15:08:36 +0800
 comments: true
-categories: [docker]
+categories: docker
 ---
 
 #### 使用Homebrew安装docker
