@@ -7,7 +7,7 @@ categories: mac
 ---
 > Mac下面制作Ubuntu启动U盘
 
-* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+* [下载Ubuntu.iso镜像文件](https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/)(以下命令执行须跟镜像文件同目录)
 * 查看USB盘符
 * diskutil list
 * 卸载USB磁盘
