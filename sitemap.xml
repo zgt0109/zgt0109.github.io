@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/</loc>
+<lastmod>2018-11-24T10:50:23+08:00</lastmod>
+</url>
+<url>
 <loc>http://zgt0109.github.io/blog/2018/11/23/docker-basic/</loc>
 <lastmod>2018-11-23T15:08:36+08:00</lastmod>
 </url>
@@ -29,5 +33,8 @@
 </url>
 <url>
 <loc>http://zgt0109.github.io/blog/categories/docker/</loc>
+</url>
+<url>
+<loc>http://zgt0109.github.io/blog/categories/mac/</loc>
 </url>
 </urlset>

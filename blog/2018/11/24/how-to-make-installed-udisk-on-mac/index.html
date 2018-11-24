@@ -5,11 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>如何用octopress搭建个人静态博客 - Blog Like a Hacker.</title>
+  <title>Mac上面制作Ubuntu启动U盘 - Blog Like a Hacker.</title>
   <meta name="author" content="zgt">
 
   
-  <meta name="description" content="如何用octopress搭建个人静态博客 Octopress ">
+  <meta name="description" content="Mac下面制作Ubuntu启动U盘
+* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+* 查看USB盘符
+* diskutil list
+* 卸载USB磁盘
+* diskutil unmountDisk /dev/disk2（找到对应的设备）
+* 使用dd将ubuntu的（ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/">
+  <link rel="canonical" href="http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Blog Like a Hacker." type="application/atom+xml">
@@ -68,7 +74,7 @@
   
   <header>
     
-      <h1 class="entry-title">如何用octopress搭建个人静态博客</h1>
+      <h1 class="entry-title">Mac上面制作Ubuntu启动U盘</h1>
     
     
       <p class="meta">
@@ -77,7 +83,7 @@
 
 
 
-<time class='entry-date' datetime='2018-11-23T14:13:45+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2018</span></span> <span class='time'>2:13 pm</span></time>
+<time class='entry-date' datetime='2018-11-24T10:50:23+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>10:50 am</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://zgt0109.github.io">Comments</a>
@@ -87,14 +93,38 @@
   </header>
 
 
-<div class="entry-content"><h3>如何用octopress搭建个人静态博客</h3>
+<div class="entry-content"><blockquote><p>Mac下面制作Ubuntu启动U盘
+* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+* 查看USB盘符
+* diskutil list
+* 卸载USB磁盘
+* diskutil unmountDisk /dev/disk2（找到对应的设备）
+* 使用dd将ubuntu的（ISO）img写入U盘
+* sudo dd if=ubuntu-desktop-i386.img.dmg of=/dev/disk2 bs=1m
+* 或者 sudo dd if=ubuntu-desktop-i386.iso of=/dev/disk2 bs=1m
+* 弹出USB(现在不用这一步，上一步写入完毕之后，会自动弹框说U盘不可读，点击退出即可)
+* diskutil eject /dev/disk2</p>
 
-<blockquote><p>Octopress</p></blockquote>
+<p>Mac 下面格式化制作的启动盘</p></blockquote>
 
-<p><img src="http://pi4lki9yr.bkt.clouddn.com/octopress.jpg" alt="Octopress" /></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>diskutil list
+</span><span class='line'>diskutil eraseVolume JHFS+ UntitledHFS /dev/disk2
+</span><span class='line'>上一条不对的话，根据提示操作
+</span><span class='line'>sudo diskutil umountDisk /dev/disk2
+</span><span class='line'>diskutil list
+</span><span class='line'>列出资盘，并查看/dev/disk2的大小</span></code></pre></td></tr></table></div></figure>
 
-<!-- more -->
 
+<blockquote><p>MacOS 磁盘管理工具 diskutil 介绍
+- <a href="https://www.jianshu.com/p/6a1f365617ad">MacOS 磁盘管理工具 diskutil 介绍</a></p></blockquote>
 </div>
 
 
@@ -110,12 +140,12 @@
 
 
 
-<time class='entry-date' datetime='2018-11-23T14:13:45+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2018</span></span> <span class='time'>2:13 pm</span></time>
+<time class='entry-date' datetime='2018-11-24T10:50:23+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>10:50 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/mac/'>mac</a>
   
 </span>
 
@@ -124,7 +154,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/" data-via="" data-counturl="http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/" data-via="" data-counturl="http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/" >Tweet</a>
   
   
   
@@ -133,8 +163,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2018/11/23/docker-basic/" title="Previous Post: docker基础命令">&laquo; docker基础命令</a>
       
-        <a class="basic-alignment right" href="/blog/2018/11/23/rails/" title="Next Post: Gem安装源替换">Gem安装源替换 &raquo;</a>
       
     </p>
   </footer>
@@ -196,8 +226,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/';
-        var disqus_url = 'http://zgt0109.github.io/blog/2018/11/23/14-octopress-install/';
+        var disqus_identifier = 'http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/';
+        var disqus_url = 'http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/';
         var disqus_script = 'embed.js';
       
     (function () {

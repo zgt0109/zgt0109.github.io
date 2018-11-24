@@ -9,8 +9,13 @@
   <meta name="author" content="zgt">
 
   
-  <meta name="description" content="使用Homebrew安装docker 1
-brew cask install docker 替换docker安装源 https://ep1dz7wh.mirror.aliyuncs.com ">
+  <meta name="description" content="Mac下面制作Ubuntu启动U盘
+* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+* 查看USB盘符
+* diskutil list
+* 卸载USB磁盘
+* diskutil unmountDisk /dev/disk2（找到对应的设备）
+* 使用dd将ubuntu的（ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +71,69 @@ brew cask install docker 替换docker安装源 https://ep1dz7wh.mirror.aliyuncs.
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2018/11/24/how-to-make-installed-udisk-on-mac/">Mac上面制作Ubuntu启动U盘</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2018-11-24T10:50:23+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>10:50 am</span></time>
+        
+           | <a href="/blog/2018/11/24/how-to-make-installed-udisk-on-mac/#disqus_thread"
+             data-disqus-identifier="http://zgt0109.github.io/blog/2018/11/24/how-to-make-installed-udisk-on-mac/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>Mac下面制作Ubuntu启动U盘
+* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+* 查看USB盘符
+* diskutil list
+* 卸载USB磁盘
+* diskutil unmountDisk /dev/disk2（找到对应的设备）
+* 使用dd将ubuntu的（ISO）img写入U盘
+* sudo dd if=ubuntu-desktop-i386.img.dmg of=/dev/disk2 bs=1m
+* 或者 sudo dd if=ubuntu-desktop-i386.iso of=/dev/disk2 bs=1m
+* 弹出USB(现在不用这一步，上一步写入完毕之后，会自动弹框说U盘不可读，点击退出即可)
+* diskutil eject /dev/disk2</p>
+
+<p>Mac 下面格式化制作的启动盘</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>diskutil list
+</span><span class='line'>diskutil eraseVolume JHFS+ UntitledHFS /dev/disk2
+</span><span class='line'>上一条不对的话，根据提示操作
+</span><span class='line'>sudo diskutil umountDisk /dev/disk2
+</span><span class='line'>diskutil list
+</span><span class='line'>列出资盘，并查看/dev/disk2的大小</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>MacOS 磁盘管理工具 diskutil 介绍
+- <a href="https://www.jianshu.com/p/6a1f365617ad">MacOS 磁盘管理工具 diskutil 介绍</a></p></blockquote>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -222,6 +290,10 @@ Run <code>source ~/.bashrc</code> and restart the app.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/11/24/how-to-make-installed-udisk-on-mac/">Mac上面制作Ubuntu启动U盘</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2018/11/23/docker-basic/">Docker基础命令</a>
