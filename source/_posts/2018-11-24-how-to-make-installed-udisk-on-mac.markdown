@@ -18,6 +18,8 @@ categories: mac
 * 弹出USB(现在不用这一步，上一步写入完毕之后，会自动弹框说U盘不可读，点击退出即可)
 * diskutil eject /dev/disk2
 
+<!-- more -->
+
 > Mac 下面格式化制作的启动盘
 
 ```bash
