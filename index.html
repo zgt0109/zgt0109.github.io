@@ -9,13 +9,12 @@
   <meta name="author" content="zgt">
 
   
-  <meta name="description" content="Mac下面制作Ubuntu启动U盘
-* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
-* 查看USB盘符
-* diskutil list
-* 卸载USB磁盘
-* diskutil unmountDisk /dev/disk2（找到对应的设备）
-* 使用dd将ubuntu的（ &hellip;">
+  <meta name="description" content="Mac下面制作Ubuntu启动U盘 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
+查看USB盘符
+diskutil list
+卸载USB磁盘
+diskutil unmountDisk /dev/disk2（找到对应的设备）
+使用dd将ubuntu的（ISO）img写入U盘 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,40 +95,28 @@
   </header>
 
 
-  <div class="entry-content"><blockquote><p>Mac下面制作Ubuntu启动U盘
-* 下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)
-* 查看USB盘符
-* diskutil list
-* 卸载USB磁盘
-* diskutil unmountDisk /dev/disk2（找到对应的设备）
-* 使用dd将ubuntu的（ISO）img写入U盘
-* sudo dd if=ubuntu-desktop-i386.img.dmg of=/dev/disk2 bs=1m
-* 或者 sudo dd if=ubuntu-desktop-i386.iso of=/dev/disk2 bs=1m
-* 弹出USB(现在不用这一步，上一步写入完毕之后，会自动弹框说U盘不可读，点击退出即可)
-* diskutil eject /dev/disk2</p>
+  <div class="entry-content"><blockquote><p>Mac下面制作Ubuntu启动U盘</p></blockquote>
 
-<p>Mac 下面格式化制作的启动盘</p></blockquote>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>diskutil list
-</span><span class='line'>diskutil eraseVolume JHFS+ UntitledHFS /dev/disk2
-</span><span class='line'>上一条不对的话，根据提示操作
-</span><span class='line'>sudo diskutil umountDisk /dev/disk2
-</span><span class='line'>diskutil list
-</span><span class='line'>列出资盘，并查看/dev/disk2的大小</span></code></pre></td></tr></table></div></figure>
+<ul>
+<li>下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)</li>
+<li>查看USB盘符</li>
+<li>diskutil list</li>
+<li>卸载USB磁盘</li>
+<li>diskutil unmountDisk /dev/disk2（找到对应的设备）</li>
+<li>使用dd将ubuntu的（ISO）img写入U盘</li>
+<li>sudo dd if=ubuntu-desktop-i386.img.dmg of=/dev/disk2 bs=1m</li>
+<li>或者 sudo dd if=ubuntu-desktop-i386.iso of=/dev/disk2 bs=1m</li>
+<li>弹出USB(现在不用这一步，上一步写入完毕之后，会自动弹框说U盘不可读，点击退出即可)</li>
+<li>diskutil eject /dev/disk2</li>
+</ul>
 
 
-<blockquote><p>MacOS 磁盘管理工具 diskutil 介绍
-- <a href="https://www.jianshu.com/p/6a1f365617ad">MacOS 磁盘管理工具 diskutil 介绍</a></p></blockquote>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2018/11/24/how-to-make-installed-udisk-on-mac/">Read more &rarr;</a>
+    </footer>
   
 
 
