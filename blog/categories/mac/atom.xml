@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mac | Blog Like a Hacker.]]></title>
   <link href="http://zgt0109.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://zgt0109.github.io/"/>
-  <updated>2018-11-24T11:28:57+08:00</updated>
+  <updated>2018-11-24T11:28:59+08:00</updated>
   <id>http://zgt0109.github.io/</id>
   <author>
     <name><![CDATA[zgt]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<blockquote><p>Mac下面制作Ubuntu启动U盘</p></blockquote>
 
 <ul>
-<li>下载Ubuntu.iso镜像文件(以下命令执行须跟镜像文件同目录)</li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">下载Ubuntu.iso镜像文件</a>(以下命令执行须跟镜像文件同目录)</li>
 <li>查看USB盘符</li>
 <li>diskutil list</li>
 <li>卸载USB磁盘</li>
