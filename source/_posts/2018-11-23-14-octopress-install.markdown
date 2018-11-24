@@ -168,3 +168,28 @@ disqus_show_comment_count: false
 设置 disqus_short_name 为刚刚创建的 Disqus 生成的 shortname，例如 zgt0109
 
 把false改为true。
+
+
+#### 6. 自定义网站域名
+创建source/CNAME 文件并指定域名
+```
+$ echo 'zgt0109.xyz' > source/CNAME
+```
+
+重新生成博客并部署
+```
+bundle exec rake generate # 生成 octopress 博客
+bundle exec rake deploy
+```
+
+首先申请一个域名，到阿里云、腾讯云上，例如
+
+    zgt0109.xyz
+
+
+将域名解析到github.io 上，主机记录值为192.30.252.153(154)
+
+![如下图](http://pi4lki9yr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-11-24%20%E4%B8%8A%E5%8D%8811.53.55.png)
+
+
+等解析域名生效之后，访问 zgt0109.xyz 就可以看到我们的博客了
