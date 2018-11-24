@@ -306,6 +306,35 @@ https://gems.ruby-china.com
 <p>设置 disqus_short_name 为刚刚创建的 Disqus 生成的 shortname，例如 zgt0109</p>
 
 <p>把false改为true。</p>
+
+<h4>6. 自定义网站域名</h4>
+
+<p>创建source/CNAME 文件并指定域名</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">&#39;zgt0109.xyz&#39;</span> &gt; <span class="nb">source</span>/CNAME
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重新生成博客并部署</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle <span class="nb">exec </span>rake generate <span class="c"># 生成 octopress 博客</span>
+</span><span class='line'>bundle <span class="nb">exec </span>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>首先申请一个域名，到阿里云、腾讯云上，例如</p>
+
+<pre><code>zgt0109.xyz
+</code></pre>
+
+<p>将域名解析到github.io 上，主机记录值为192.30.252.153(154)</p>
+
+<p><img src="http://pi4lki9yr.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-11-24%20%E4%B8%8A%E5%8D%8811.53.55.png" alt="如下图" /></p>
+
+<p>等解析域名生效之后，访问 zgt0109.xyz 就可以看到我们的博客了</p>
 </div>
 
 
